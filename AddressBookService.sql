@@ -57,3 +57,11 @@ select * from address_book_service;
 
 #UC10-To get no.of contacts by type
 select type, count(first_name) from address_book_service group by type; #Count by type
+
+
+#UC11-To add person with two types
+insert into address_book_service(first_name,last_name,address,city,state,zip,phone_number,email,type) values
+('Naveen','Reddy','rajeswaripuram','Khammam','Telangana',526384,958249631,'naveenreddy@gmail.com','FRIEND');
+insert into address_book_service(first_name,last_name,address,city,state,zip,phone_number,email,type) values
+('Aish','samu','kukatpally','Hyderabad','Telangana',500056,984963685,'aishwarya@gmail.com','FAMILY');
+select * from address_book_service;
