@@ -40,3 +40,9 @@ select * from address_book_service;
 
 #UC6-To retrieve contacts belongs to city or state
 select * from  address_book_service where city='hyd' or state='Telangana';
+#UC7-Size of book by city and state
+select state, count(first_name) from address_book_service group by state; #Count by state
+select city, count(first_name) from address_book_service group by city; #Count by city
+
+#UC8-To sort the contacts for given city
+select * from address_book_service where city="Khammam" order by first_name asc;
