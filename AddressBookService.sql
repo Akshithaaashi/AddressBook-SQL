@@ -18,3 +18,14 @@ phone_number int not null,
 email varchar(50) not null
 );
 select * from address_book_service;
+
+#UC3
+#Add data to Table of database
+insert  into address_book_service(first_name,last_name,address,city,state,zip,phone_number,email) values
+('Akshitha','samudrala','NCL','Hyd','Telangana',500014,853642196,'akshitha.aashi@gmail.com'),
+('Aish','samu','kukatpally','Hyderabad','Telangana',500056,984963685,'aishwarya@gmail.com'),
+('Abhi','Naik','kompally','Hyd','Telangana',854639,936548972,'abhinaik@gmail.com'),
+('Sai','Vara','Patelnagar','karnataka','Andhra',568974,759684126,'saivara@gmail.com'),
+('Srujan','sai','medchal','Hyd','Telangana',364528,789345215,'srujan@gmail.com'),
+('Naveen','Reddy','rajeswaripuram','Khammam','Telangana',526384,958249631,'naveenreddy@gmail.com');
+select * from address_book_service;
