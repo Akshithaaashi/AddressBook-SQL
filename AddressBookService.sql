@@ -29,3 +29,11 @@ insert  into address_book_service(first_name,last_name,address,city,state,zip,ph
 ('Srujan','sai','medchal','Hyd','Telangana',364528,789345215,'srujan@gmail.com'),
 ('Naveen','Reddy','rajeswaripuram','Khammam','Telangana',526384,958249631,'naveenreddy@gmail.com');
 select * from address_book_service;
+
+#UC4-To edit existing details of Contact
+update address_book_service set address='kompally' where first_name='Srujan';
+select * from address_book_service;
+
+#UC5-To delete a contact using name
+delete from address_book_service where first_name='Srujan';
+select * from address_book_service;
