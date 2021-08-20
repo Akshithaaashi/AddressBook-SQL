@@ -26,7 +26,7 @@ insert  into address_book_service(first_name,last_name,address,city,state,zip,ph
 ('Aish','samu','kukatpally','Hyderabad','Telangana',500056,984963685,'aishwarya@gmail.com'),
 ('Abhi','Naik','kompally','Hyd','Telangana',854639,936548972,'abhinaik@gmail.com'),
 ('Sai','Vara','Patelnagar','karnataka','Andhra',568974,759684126,'saivara@gmail.com'),
-('Srujan','sai','medchal','Hyd','Telangana',364528,789345215,'srujan@gmail.com'),
+('Sri','sai','medchal','Hyd','Telangana',364528,789345215,'srujan@gmail.com'),
 ('Naveen','Reddy','rajeswaripuram','Khammam','Telangana',526384,958249631,'naveenreddy@gmail.com');
 select * from address_book_service;
 
@@ -46,3 +46,11 @@ select city, count(first_name) from address_book_service group by city; #Count b
 
 #UC8-To sort the contacts for given city
 select * from address_book_service where city="Khammam" order by first_name asc;
+
+#UC9-To Identify each Book with Name and Type
+alter table address_book_service add type varchar(31);
+select * from address_book_service;
+update address_book_service set type='FAMILY' where first_name='Aish' or first_name='Akshitha';
+update address_book_service set type='FRIEND' where first_name='Naveen' or first_name='Sri';
+update address_book_service set type='PROFESSION' where first_name='Sai' or first_name='Abhi';
+select * from address_book_service;
