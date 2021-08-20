@@ -65,3 +65,28 @@ insert into address_book_service(first_name,last_name,address,city,state,zip,pho
 insert into address_book_service(first_name,last_name,address,city,state,zip,phone_number,email,type) values
 ('Aish','samu','kukatpally','Hyderabad','Telangana',500056,984963685,'aishwarya@gmail.com','FAMILY');
 select * from address_book_service;
+
+#UC12-ER diagram of addressbook
+CREATE TABLE People(
+     PersonId int primary key not null,
+	 FirstName varchar(20) not null,
+     LastName varchar(20) not null,
+     PhoneNumber numeric(10),
+     Email VARCHAR(50)
+     );
+     
+ CREATE TABLE addressbookattributes(
+	PersonId int,
+    AddressBookName varchar(20) unique not null,
+	AddressBookType varchar(20) not null,
+     FOREIGN KEY (PersonId) REFERENCES People(PersonId)
+   );
+   CREATE TABLE Address1(
+     PersonId int,
+     PersonAddress varchar(50) not null,
+    City varchar(15) not null,
+    State varchar(20) not null,
+    Zip_Code numeric(6) not null,
+     FOREIGN KEY (PersonId) REFERENCES People(PersonId)
+     );
+         
